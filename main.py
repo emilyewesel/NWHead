@@ -49,7 +49,7 @@ from tensorflow.keras.applications.vgg16 import VGG16, preprocess_input
 df = pd.read_csv('/dataNAS/people/paschali/datasets/chexpert-public/chexpert-public/train.csv')
 print(df.head())
 df.dropna(subset=['Support Devices'], inplace=True)
-baase = "/dataNAS/people/paschali/datasets/chexpert-public/chexpert-public/train"
+baase = "/dataNAS/people/paschali/datasets/chexpert-public/chexpert-public/train/"
 
 import pandas as pd
 from sklearn.model_selection import train_test_split
