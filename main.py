@@ -48,6 +48,8 @@ from tensorflow.keras.applications.vgg16 import VGG16, preprocess_input
 # Load the CSV file into a DataFrame
 df = pd.read_csv('/dataNAS/people/paschali/datasets/chexpert-public/chexpert-public/train.csv')
 print(df.head())
+df.dropna(subset=['Support Devices'], inplace=True)
+
 
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -61,6 +63,7 @@ from sklearn.preprocessing import LabelEncoder
 # You may need to modify this based on your actual dataset structure
 X = df[['Sex', 'Age']]  # Add other features as needed
 y = df['Support Devices']
+
 
 # Handle missing values
 imputer = SimpleImputer(strategy='mean')
