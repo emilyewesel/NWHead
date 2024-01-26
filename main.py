@@ -56,9 +56,6 @@ from sklearn.metrics import accuracy_score, classification_report
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import LabelEncoder
 
-# Load your dataset
-df = pd.read_csv('your_dataset.csv')  # replace 'your_dataset.csv' with your actual dataset file
-
 # Data Preprocessing
 # Assuming you have a feature 'Path' and a target variable 'Support Devices'
 # You may need to modify this based on your actual dataset structure
