@@ -6,6 +6,4 @@
 #SBATCH -c 20
 #SBATCH --mail-type=BEGIN,END,FAIL
 
-ml python/3.9.0
-
-python3 main_as.py
+python3 main.py

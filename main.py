@@ -48,7 +48,7 @@ from tensorflow.keras.applications.vgg16 import VGG16, preprocess_input
 # Load the CSV file into a DataFrame
 df = pd.read_csv('/dataNAS/people/paschali/datasets/chexpert-public/chexpert-public/train.csv')
 print(df.head())
-df.dropna(subset=['Support Devices'], inplace=True)
+df.dropna(subset=['No Finding'], inplace=True)
 baase = "/dataNAS/people/paschali/datasets/chexpert-public/chexpert-public/train/"
 
 import pandas as pd
@@ -99,7 +99,7 @@ from sklearn.preprocessing import LabelEncoder
 
 
 X = df[['Path', 'Sex', 'Age']]  # Add other features as needed
-y = df['Support Devices']
+y = df['No Finding']
 
 # Handle missing values
 imputer = SimpleImputer(strategy='mean')
@@ -122,7 +122,8 @@ def load_and_preprocess_image(img_path):
 # Extract features from images
 X_images = []
 for img_path in X['Path']:
-    img_path = baase + img_path
+    result = img_path.split('/').slice(1).join('/');
+    img_path = baase + result
     img_array = load_and_preprocess_image(img_path)
     features = vgg16_model.predict(img_array)
     X_images.append(features.flatten())
