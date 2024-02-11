@@ -17,6 +17,9 @@ from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.vgg16 import VGG16, preprocess_input
 
 
+
+
+
 # def load_model(model_name, num_classes):
 #     if model_name == 'resnet18':
 #         model = models.resnet18(pretrained=True)
